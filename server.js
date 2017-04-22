@@ -8,13 +8,13 @@ var path = require( 'path' );
 var bodyParser = require( 'body-parser' );
 
 //globals
-
+var total = 0;
 
 // uses
 app.use( express.static( 'public' ) );
 app.use( bodyParser.urlencoded( { extended: true } ) );
 
-// server
+// server at 3000
 app.listen( 3000, function(){
   console.log( 'server up on:', 3000 );
 });
