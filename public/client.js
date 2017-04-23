@@ -1,3 +1,13 @@
+// client side will take in the values (in 2 input text fields) and the type of
+// mathematical operation (selected using a button on the DOM).
+// Convert the input fields for the two values to Buttons. So the experience
+// would allow the user to click on a numerical button, then a mathematical
+// operation, then a numerical button again. Then have an equal button that
+// sends all of the information to the server.
+// Finally, build a 'clear' button that resets the whole experience.
+
+
+
 $(document).ready(onReady);
 console.log('JQ');
 
@@ -14,13 +24,15 @@ function onReady(){
   $('#times').on('click', buttonFunc);
   $('#divides').on('click', buttonFunc);
   $('#equals').on('click', buttonFunc);
+  $('.numbers').on('click', buttonFunc);
 } // end onReady
 
-function buttonFunc() {
 
+function buttonFunc() {
+  console.log('buttonFunc');
 }
 
 function clearFunc() {
   $('#result').empty();
-  total = '';
+  result = '';
 }

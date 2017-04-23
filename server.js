@@ -1,6 +1,8 @@
-// The logic for the calculator needs to be housed on the Server, where the
-// client side will take in the values (in 2 input text fields) and the type of
-// mathematical operation (selected using a button on the DOM).
+// The logic for the calculator needs to be housed on the Server
+// Once the server receives it, build out logic to compute the numbers in 1 of 4
+// different ways. The server should be able to handle Addition, Subtraction,
+// Multiplication, and Division. Once the calculation is complete, it should be
+// sent back down to the client side app where it should be displayed on the DOM.
 
 var express = require( 'express' );
 var app = express();
@@ -8,7 +10,7 @@ var path = require( 'path' );
 var bodyParser = require( 'body-parser' );
 
 //globals
-var total = 0;
+
 
 // uses
 app.use( express.static( 'public' ) );
