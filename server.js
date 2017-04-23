@@ -1,18 +1,15 @@
-// The logic for the calculator needs to be housed on the Server
-// Once the server receives it, build out logic to compute the numbers in 1 of 4
-// different ways. The server should be able to handle Addition, Subtraction,
-// Multiplication, and Division. Once the calculation is complete, it should be
-// sent back down to the client side app where it should be displayed on the DOM.
-
+// requires
 var express = require( 'express' );
 var app = express();
 var path = require( 'path' );
 var bodyParser = require( 'body-parser' );
+var calcMod = require( './calcMod' );
 
-//globals
+// globals
 var total = 0;
 var xNum = 0;
 var yNum = 0;
+var userInput;
 
 // uses
 app.use( express.static( 'public' ) );
@@ -24,23 +21,12 @@ app.listen( 3000, function(){
 });
 
 // POST
-app.post( '/calc', function( req,res ){
-  if ( operators === "+" ){
-    total = x + y;
-  }
-  else if ( operators === "-" ){
-    total = x - y;
-  }
-  else if ( operators === "/" ){
-    total = x / y;
-  }
-  else if ( operators === "*" ){
-    total = x * y;
-  }
+app.post( '/calc', function( req, res ){
+  var data = req.body;
   res.status( 200 );
 });
 
 // GET
-app.get( '/calc', function( req,res ){
+app.get( '/calc', function( req, res ){
   console.log( '/calc' );
 });
