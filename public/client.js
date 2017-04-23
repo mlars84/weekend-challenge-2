@@ -10,12 +10,12 @@ function onReady(){
   $( '#minus' ).on( 'click', buttonFunc );
   $( '#times' ).on( 'click', buttonFunc );
   $( '#divides' ).on( 'click', buttonFunc );
-  $( '#equals' ).on( 'click', equals );
+  $( '#equals' ).on( 'click', equalsFunc );
   // number buttons
   $( '.numberButtons' ).on( 'click', buttonFunc );
 } // end onReady
 
-function equals(){
+function equalsFunc(){
   console.log( 'equals' );
 var objectToSend = {
   xNum: $( '#x' ).text(),
@@ -40,7 +40,7 @@ var objectToSend = {
       console.log('response');
     }
   });
-} // end equals
+} // end equalsFunc
 
 function buttonFunc() {
   console.log( 'buttonFunc' );
